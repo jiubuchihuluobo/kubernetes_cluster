@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: clickhouse-product-3shard-1repl-nodeport
+  labels:
+    clickhouse.altinity.com/Service: chi
+    clickhouse.altinity.com/app: chop
+    clickhouse.altinity.com/chi: product-3shard-1repl
+    clickhouse.altinity.com/namespace: clickhouse-product
+    clickhouse.altinity.com/servicetype: nodeport
+spec:
+  ports:
+    - name: http
+      port: 8123
+      protocol: TCP
+      targetPort: http
+    - name: tcp
+      port: 9000
+      protocol: TCP
+      targetPort: tcp
+  selector:
+    clickhouse.altinity.com/app: chop
+    clickhouse.altinity.com/chi: product-3shard-1repl
+    clickhouse.altinity.com/namespace: clickhouse-product
+    clickhouse.altinity.com/ready: "yes"
+  type: NodePort
