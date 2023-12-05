@@ -2,4 +2,4 @@
 
 ZK_NAMESPACE="${ZK_NAMESPACE:-redis-product}"
 
-kubectl delete namespace ${ZK_NAMESPACE}
+kubectl delete namespace "${ZK_NAMESPACE}"

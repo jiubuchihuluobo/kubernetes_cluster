@@ -2,8 +2,8 @@
 
 ZK_NAMESPACE="${ZK_NAMESPACE:-redis-product}"
 YAML_FILES_LIST="\
-storageclass-redis.yaml \
-basic.yaml \
+01-storageclass-redis.yaml \
+02-basic.yaml \
 "
 
 CUR_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"

@@ -1,12 +1,12 @@
 apiVersion: "clickhouse.altinity.com/v1"
 kind: "ClickHouseInstallation"
 metadata:
-  name: "product-3shard-1repl"
+  name: "product-2shard-1repl"
 spec:
   configuration:
     users:
-      default/password: 1qazXcft^
-      admin/password: 1qazXcft^
+      default/password_sha256_hex: 9a6444956bcdc320ae0d6aef32c8c28fa00fab0b713b10247d74e3b96a8e6a79
+      admin/k8s_secret_password_sha256_hex: clickhouse-secret/admin
       admin/networks/host_regexp: ".*"
       admin/networks/ip:
         - "0.0.0.0/0"
@@ -22,7 +22,7 @@ spec:
         templates:
           podTemplate: pod-template-with-volumes
         layout:
-          shardsCount: 3
+          shardsCount: 2
           replicasCount: 1
 
   templates:
