@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ZK_NAMESPACE="${ZK_NAMESPACE:-zoons}"
+ZK_NAMESPACE="${ZK_NAMESPACE:-zookeeper-product}"
 YAML_FILES_LIST="\
 01-service-client-access.yaml \
 02-headless-service.yaml \
