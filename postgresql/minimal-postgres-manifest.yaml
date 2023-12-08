@@ -5,17 +5,8 @@ metadata:
 spec:
   teamId: "acid"
   volume:
-    size: 2Gi
+    size: 3Gi
     storageClass: "storageclass-postgresql"
   numberOfInstances: 2
-  users:
-    zalando:
-    - superuser
-    - createdb
-    foo_user: []
-  databases:
-    foo: zalando
-  preparedDatabases:
-    bar: {}
   postgresql:
     version: "15"
